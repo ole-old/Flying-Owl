@@ -11,8 +11,11 @@ Place this directory in your KA Lite directory, convert all of the .MP4 files in
 The start.html page loads topics.json into your browser.  When that finishes loading, you are prompted to go to topics.html where you can browse the "Source of all knowledge", the topic tree.  When you drill down far enough, the links lead to video.html which will load a video from your ka-lite's content directory and also form a link to HTML exercises in your ka-lite directory.  When you click on the exercise link, it brings you to that exercise's HTML page.
 
 # Room for improvement
-## Improve the UI
-Right now just the basics are there.
+## Improve the basic UI
+Right now there isn't a single line of CSS.
+
+## Exercises dashboard
+Only the topic tree for videos is exposed at the moment. That means you can only get to an exercise by going to its related video.
 
 ## Integrate the KA Lite video player and all its features
 Most noteably, subtitles.  
