@@ -115,6 +115,7 @@
         "Video Player": Handlebars.compile($("#video-player-template").html())
       }
       $("body").append(templates["Video Player"](this.data))
+      $(".player").flowplayer({swf:"../static/js/flowplayer.swf"})
     }
   }
 
