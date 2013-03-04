@@ -35,6 +35,10 @@ a:visited {
   margin-right: 2px;
 }
 
+.file-name {
+  float: left;
+}
+
 .practice-link {
   float: right;
   padding: 3px 5px;

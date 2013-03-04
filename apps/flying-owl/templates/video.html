@@ -35,7 +35,8 @@
     TEMPLATES 
   -->
   <script id="video-player-template" type="text/x-handlebars-template">
-    <h2>{{title}} ({{youtube_id}}.mp4)</h2>
+    <h2>{{title}} </h2>
+    <p class="file-name">Filename: {{youtube_id}}.mp4</p>
     <p class="practice-link"><a href="../../../../kalite/static/khan-exercises/exercises/{{related_exercise.slug}}.html"><img src="../static/images/noun_project_11185.png"> Practice this concept<a/></p>
     <div class="player">
       <video data-engine="flash">
