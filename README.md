@@ -33,7 +33,7 @@ Most noteably, subtitles.
 This could work on two ends, when KA Lite does its import from the Internet it could generate a slim version of topics.json.  The other end is perhaps giving the user the option of only taking part of what is on the KA Lite installation. Loading a giant topics.json into a mobile browser is less than ideal.
 
 ## Turn topics.json into a JSON store so the browser doesn't have to load the entire topics.json file all at once.
-You'd be surprised how even the most modern version on Chrome chokes on localStorage.  See [my gist](https://gist.github.com/rjsteinert/5080816) for an idea of how to make a file based JSON store.
+You'd be surprised how even the most modern version on Chrome chokes on localStorage, albeit, due to defined quotas creates the dreaded QUOTA_EXCEEDED_ERR: DOM Exception 22.  Even KA Heavy has this issue (https://code.google.com/p/khanacademy/issues/detail?id=7936).  It's possible to write a script that breaks out topics.json (or any JSON for that matter) into a neat folder/text file structure so browsers only have to request the part of the JSON they need.  See  [my gist](https://gist.github.com/rjsteinert/5080816) for an idea of how to make a file based JSON store.
 
 ## Less javascript, more static html
 Instead of loading topics.json into the browser and asking javascript to render topic and video pages, render topic and video pages as an html tree. Think like [Jekyll](https://github.com/mojombo/jekyll).
