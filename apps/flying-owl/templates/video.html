@@ -36,7 +36,7 @@
   -->
   <script id="video-player-template" type="text/x-handlebars-template">
     <h2>{{title}} ({{youtube_id}}.mp4)</h2>
-    <p><a href="../../../../kalite/static/khan-exercises/exercises/{{related_exercise.slug}}.html">Practice this topic<a/></p>
+    <p class="practice-link"><a href="../../../../kalite/static/khan-exercises/exercises/{{related_exercise.slug}}.html"><img src="../static/images/noun_project_11185.png"> Practice this concept<a/></p>
     <div class="player">
       <video data-engine="flash">
         <source type="video/mp4" src="../../../../content/{{youtube_id}}.mp4" />
@@ -44,9 +44,17 @@
     </div>
   </script>
 
+  <script id="progress-template" type="text/x-handlebars-template">
+    You have watched <a href="#">Save progress</a>
+  </script>
+
 
 </head>
 <body>
+
+<div class="footer">
+
+</div>
 
 </body>
 </html>

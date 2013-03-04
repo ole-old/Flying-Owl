@@ -1,0 +1,56 @@
+body {
+  font-size: 2em;
+  background: #222;
+  color: white;
+}
+a:link {
+  color: yellow;
+}
+a:visited {
+  color:green;
+}
+
+.progress {
+  background: grey;
+  padding:4px;
+  font-size: 1em;
+}
+
+.progress a {
+  float: right;
+  padding:3px 5px;
+  font-size: .8em;
+  background: green;
+}
+
+.progress a:link {
+  color: white ;
+  text-decoration: none;
+} 
+
+.progress a img {
+  height: 25px;
+  position: relative;
+  top: 3px;
+  margin-right: 2px;
+}
+
+.practice-link {
+  float: right;
+  padding: 3px 5px;
+  background: green;
+  color: white;
+  font-size: .8em;
+}
+
+.practice-link a, .practice-link a:link {
+  color: white;
+  text-decoration: none; 
+}
+
+.practice-link img {
+  position: relative;
+  height: 30px;
+  top: 3px;
+
+}
