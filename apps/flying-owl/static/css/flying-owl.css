@@ -1,19 +1,34 @@
 body {
   font-size: 2em;
-  background: #222;
-  color: white;
+  background: #EEE;
+  color: #222;
+  background-position: fixed;
+  margin-top: 120px;
 }
 a:link {
-  color: yellow;
+  color: black;
 }
 a:visited {
   color:green;
 }
 
 .progress {
-  background: grey;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left : 0px;
+  margin: 0px;
+  color: #222;
+  background: #777 url(../images/ka-gradient.png);
   padding:4px;
   font-size: 1em;
+  border-width: 0 0 2px;
+  border-color: #444;
+  border-style: solid;
+}
+
+.progress p {
+  float: left;
 }
 
 .progress a {
@@ -36,6 +51,7 @@ a:visited {
   border: solid #1a8000 2px;
   background: -webkit-gradient(linear, 0 0, 0 100%, from(#0fbf24), to(#2e8a00));
   background: -moz-linear-gradient(top, #0fbf24, #2e8a00);
+  margin: 35px 15px 0 0;
 } 
 .progress a:hover {
   background: #2e8a00;
@@ -91,4 +107,8 @@ a.practice-link:hover {
   height: 30px;
   top: 3px;
 
+}
+
+.flow-player .fp-buffer {
+  background: #222 !important;
 }
