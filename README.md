@@ -3,6 +3,9 @@ Make your KA Lite installation lighter, put a bird on it.
 # About
 When placed in your KA Lite's installation directory, open start.html for serverless browsing of your KA Lite's videos and exercises. 
 
+![Screenshot](https://raw.github.com/open-learning-exchange/Flying-Owl/master/screenshot_1.png)
+![Screenshot](https://raw.github.com/open-learning-exchange/Flying-Owl/master/screenshot_2.png)
+
 # Installation
 Place this directory in your KA Lite directory and then open the start.html file. Your done! Well, almost.  This includes a pruned version of the topics.json file because most browsers (Chrome, Android web browser) will choke (QuataExceeded: DOM Exception 22) if you put that into localStorage. You may want to roll your own topics.json file or help out with the efforts to make a file system based JSON store so the whole topics.json doesn't have to be loaded all at once (see GIST https://gist.github.com/rjsteinert/5080816). 
 
@@ -36,8 +39,12 @@ Firefox on Android (passes)
 The start.html page loads topics.json into your browser.  When that finishes loading, you are prompted to go to topics.html where you can browse the "Source of all knowledge", the topic tree.  When you drill down far enough, the links lead to video.html which will load a video from your ka-lite's content directory and also form a link to HTML exercises in your ka-lite directory.  When you click on the exercise link, it brings you to that exercise's HTML page.
 
 # Room for improvement
-## Improve the basic UI
-Right now there isn't a single line of CSS.
+
+## Capture more data
+Capture amount of video watched as opposed number of times watched.  Capture exercise progress data.
+
+## Exercise player
+Using the html files in the Khan Exercises is problematic from a UI perspective (the login, signup, etc. buttons are confusing) and those html files actually do an XMLHTTPRequest to render themselves which causes them to fail on WebKit based browsers.
 
 ## Exercises dashboard
 Only the topic tree for videos is exposed at the moment. That means you can only get to an exercise by going to its related video.
