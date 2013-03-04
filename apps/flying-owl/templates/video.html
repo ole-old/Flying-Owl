@@ -35,14 +35,15 @@
     TEMPLATES 
   -->
   <script id="video-player-template" type="text/x-handlebars-template">
-    <h2>{{title}} </h2>
-    <p class="file-name">Filename: {{youtube_id}}.mp4</p>
-    <p class="practice-link"><a href="../../../../kalite/static/khan-exercises/exercises/{{related_exercise.slug}}.html"><img src="../static/images/noun_project_11185.png"> Practice this concept<a/></p>
+    <h2 class="title">{{title}} </h2>
+    <a class="practice-link" href="../../../../kalite/static/khan-exercises/exercises/{{related_exercise.slug}}.html"><img src="../static/images/noun_project_11185.png">Practice this concept<a/>
     <div class="player">
       <video data-engine="flash">
         <source type="video/mp4" src="../../../../content/{{youtube_id}}.mp4" />
       </video>
     </div>
+
+    <p class="file-name">Filename: {{youtube_id}}.mp4</p>
   </script>
 
   <script id="progress-template" type="text/x-handlebars-template">
