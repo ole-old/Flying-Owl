@@ -11,12 +11,15 @@
     $("#message").html(
       "Your library has been loaded. <a href='apps/flying-Owl/templates/topic-list.html'>Click here to see the topic list.</a>"
     )
+
+    localStorage.setItem("flyingOwlProgress", "[]")
     
 
   }
 
   $.flyingOwl.init = function() {
     $.flyingOwl.topics.init()
+    $.flyingOwl.progress.init()
   }
 
   $.flyingOwl.topics = {
@@ -109,6 +112,7 @@
 
     init: function () {
       this.read()
+      $.flyingOwl.progress.save($.url().param("path"))
     },
 
     read: function() {
@@ -125,38 +129,31 @@
     }
   }
 
-  $.flyingOwl.libraryCard = {
+  $.flyingOwl.progress = {
 
     data: {},
 
-    init: function () {
+    init: function() {
       this.read()
       this.refreshView()
     },
 
     read: function() {
-      if (dataCallback.data['libraryCard']) {  
-        this.data = dataCallback.data['libraryCard']
-      }
-      else {
-        alert("We could not find your library card :-(.  Is it missing?")
-      }
-
+      var data = localStorage.getItem("flyingOwlProgress")
+      console.log(data)
+      this.data = JSON.parse(data)
     },
 
     refreshView: function() {
-      console.log(this.data)
+      $("body").append('<div class="progress">You have watched ' + this.data.length + ' videos. <a href="data:application/octet-stream;charset=utf-8;base64,'+ window.btoa(this.data) + '">Save progress</a></div>')
     },
 
-    save: function() {
-
+    save: function(path) {
+      this.data.push(path)
+      localStorage.setItem("flyingOwlProgress", JSON.stringify(this.data))
     }
 
   }
 
-  $.flyingOwl.util = {
-    
-
-  }
 
 })(jQuery);
