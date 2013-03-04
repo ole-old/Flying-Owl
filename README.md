@@ -6,8 +6,15 @@ When placed in your KA Lite's installation directory, open start.html for server
 # Installation
 Place this directory in your KA Lite directory and then open the start.html file. Your done! Well, almost.  This includes a pruned version of the topics.json file because most browsers (Chrome, Android web browser) will choke (QuataExceeded: DOM Exception 22) if you put that into localStorage. You may want to roll your own topics.json file or help out with the efforts to make a file system based JSON store so the whole topics.json doesn't have to be loaded all at once (see GIST https://gist.github.com/rjsteinert/5080816). 
 
-# Compatible browser
+# Compatible browsers
 Currently only browsers that support the mp4 format, the format that KA Lite imports from Khan Academy, will work because the flash fallback is failing when using the file protocol in the browser (at least this is the case for Firefox on Mac and Android).  
+
+## Test with
+Chrome on Mac (passes)
+Chrome on Android (N/A) -> Can't figure out how to open a file...
+Android browser (passes)
+Firefox on Mac (fails)
+Firefox on Android (fails)
 
 # Technical stuff
 The start.html page loads topics.json into your browser.  When that finishes loading, you are prompted to go to topics.html where you can browse the "Source of all knowledge", the topic tree.  When you drill down far enough, the links lead to video.html which will load a video from your ka-lite's content directory and also form a link to HTML exercises in your ka-lite directory.  When you click on the exercise link, it brings you to that exercise's HTML page.
