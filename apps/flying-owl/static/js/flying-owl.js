@@ -145,7 +145,7 @@
     },
 
     refreshView: function() {
-      $("body").append('<div class="progress">You have watched ' + this.data.length + ' videos. <a href="data:application/octet-stream;charset=utf-8;base64,'+ window.btoa(this.data) + '">Save progress</a></div>')
+      $("body").append('<div class="progress">You have watched ' + this.data.length + ' videos. <a href="data:application/octet-stream;charset=utf-8;base64,'+ window.btoa(this.data) + '"><img src="../static/images/noun_project_10905.png">Save progress</a></div>')
     },
 
     save: function(path) {
