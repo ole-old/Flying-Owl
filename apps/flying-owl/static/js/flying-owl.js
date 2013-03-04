@@ -42,7 +42,10 @@
     /*
      * This will build the list on topics.html
      */
-    refreshView: function(path = "") {
+    refreshView: function(path) {
+      if (path == null) {
+        path = ""
+      }
       var currentTopic = this.data
       // If our currentTopic isn't correct, fix it.
       if(currentTopic.path != path || path == "") {
@@ -67,6 +70,9 @@
      * This will give you an item from topics.json as it is referered to by its path
      */
     getItemByPath: function(path) {
+      if (path == null) {
+        path = ""
+      }
       // Build a walkway
       var pathArray = path.split("/")
       for(var i=0, l=pathArray.length; i<l; i++) {
