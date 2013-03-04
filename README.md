@@ -9,39 +9,39 @@ When placed in your KA Lite's installation directory, open start.html for server
 # Installation
 Place this directory in your KA Lite directory and then open the start.html file. Your done! Well, almost.  This includes a pruned version of the topics.json file because most browsers (Chrome, Android web browser) will choke (QuataExceeded: DOM Exception 22) if you put that into localStorage. You may want to roll your own topics.json file or help out with the efforts to make a file system based JSON store so the whole topics.json doesn't have to be loaded all at once (see GIST https://gist.github.com/rjsteinert/5080816). 
 
-# Compatible browsers
-Currently only browsers that support the mp4 format, the format that KA Lite imports from Khan Academy, will work because the flash fallback is failing when using the file protocol in the browser (at least this is the case for Firefox on Mac and Android).  
-
 # What works with which browsers
 
 ## Browsing the topic tree
-Chrome on Mac (passes, as long as the topics.json file is so large that it exceeds localStorage limit)
-Chrome on Android (N/A) -> Can't figure out how to open a file...
-Android browser (passes, as long as the topics.json file is so large that it exceeds localStorage limit)
-Firefox on Mac (passes, even with the entire topics.json)
-Firefox on Android (passes, probably needs a smaller topics.json file depending on your hardware)
+- Chrome on Mac (passes, as long as the topics.json file is so large that it exceeds localStorage limit)
+- Chrome on Android (N/A) -> Can't figure out how to open a file...
+- Android browser (passes, as long as the topics.json file is so large that it exceeds localStorage limit)
+- Firefox on Mac (passes, even with the entire topics.json)
+- Firefox on Android (passes, probably needs a smaller topics.json file depending on your hardware)
 
 ## Watching Videos
-Chrome on Mac (passes, has support for mp4)
-Chrome on Android (N/A) -> Can't figure out how to open a file...
-Android browser (passes, has support for mp4)
-Firefox on Mac (fails, no support for mp4 AND the flash fallback fails when used on file protocol)
-Firefox on Android (fails, no support for mp4 AND the flash fallback fails when used on file protocol)
+- Chrome on Mac (passes, has support for mp4)
+- Chrome on Android (N/A) -> Can't figure out how to open a file...
+- Android browser (passes, has support for mp4)
+- Firefox on Mac (fails, no support for mp4 AND the flash fallback fails when used on file protocol)
+- Firefox on Android (fails, no support for mp4 AND the flash fallback fails when used on file protocol)
 
 ## Exercises
-Chrome on Mac (fails, no support for XMLHTTPRequest when using file protocol)
-Chrome on Android (N/A) -> Can't figure out how to open a file...
-Android browser (fails, no support for XMLHTTPRequest when using file protocol)
-Firefox on Mac (passes)
-Firefox on Android (passes)
+- Chrome on Mac (fails, no support for XMLHTTPRequest when using file protocol)
+- Chrome on Android (N/A) -> Can't figure out how to open a file...
+- Android browser (fails, no support for XMLHTTPRequest when using file protocol)
+- Firefox on Mac (passes)
+- Firefox on Android (passes)
 
 # Technical stuff
-The start.html page loads topics.json into your browser.  When that finishes loading, you are prompted to go to topics.html where you can browse the "Source of all knowledge", the topic tree.  When you drill down far enough, the links lead to video.html which will load a video from your ka-lite's content directory and also form a link to HTML exercises in your ka-lite directory.  When you click on the exercise link, it brings you to that exercise's HTML page.
+The start.html page loads a modified topics.json into your browser. It's been modified for a JSONP callback because WebKit browsers don't support XMLHTTPRequest when using file protocol.  When that finishes loading, you are prompted to go to topics.html where you can browse the "Source of all knowledge", the topic tree.  When you drill down far enough, the links lead to video.html which will load a video from your ka-lite's content directory and also form a link to HTML exercises in your ka-lite directory.  When you click on the exercise link, it brings you to that exercise's HTML page.
 
 # Room for improvement
 
 ## Capture more data
 Capture amount of video watched as opposed number of times watched.  Capture exercise progress data.
+
+## An import function in KA Lite for progress data
+The whole point of saving the progress data as files is so that the student can bring their "homework" to class so the teacher can see their progress.
 
 ## Exercise player
 Using the html files in the Khan Exercises is problematic from a UI perspective (the login, signup, etc. buttons are confusing) and those html files actually do an XMLHTTPRequest to render themselves which causes them to fail on WebKit based browsers.
