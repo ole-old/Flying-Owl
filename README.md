@@ -9,12 +9,28 @@ Place this directory in your KA Lite directory and then open the start.html file
 # Compatible browsers
 Currently only browsers that support the mp4 format, the format that KA Lite imports from Khan Academy, will work because the flash fallback is failing when using the file protocol in the browser (at least this is the case for Firefox on Mac and Android).  
 
-## Test with
-Chrome on Mac (passes)
+# What works with which browsers
+
+## Browsing the topic tree
+Chrome on Mac (passes, as long as the topics.json file is so large that it exceeds localStorage limit)
 Chrome on Android (N/A) -> Can't figure out how to open a file...
-Android browser (passes)
-Firefox on Mac (fails)
-Firefox on Android (fails)
+Android browser (passes, as long as the topics.json file is so large that it exceeds localStorage limit)
+Firefox on Mac (passes, even with the entire topics.json)
+Firefox on Android (passes, probably needs a smaller topics.json file depending on your hardware)
+
+## Watching Videos
+Chrome on Mac (passes, has support for mp4)
+Chrome on Android (N/A) -> Can't figure out how to open a file...
+Android browser (passes, has support for mp4)
+Firefox on Mac (fails, no support for mp4 AND the flash fallback fails when used on file protocol)
+Firefox on Android (fails, no support for mp4 AND the flash fallback fails when used on file protocol)
+
+## Exercises
+Chrome on Mac (fails, no support for XMLHTTPRequest when using file protocol)
+Chrome on Android (N/A) -> Can't figure out how to open a file...
+Android browser (fails, no support for XMLHTTPRequest when using file protocol)
+Firefox on Mac (passes)
+Firefox on Android (passes)
 
 # Technical stuff
 The start.html page loads topics.json into your browser.  When that finishes loading, you are prompted to go to topics.html where you can browse the "Source of all knowledge", the topic tree.  When you drill down far enough, the links lead to video.html which will load a video from your ka-lite's content directory and also form a link to HTML exercises in your ka-lite directory.  When you click on the exercise link, it brings you to that exercise's HTML page.
