@@ -3,6 +3,8 @@ Make your KA Lite installation lighter, put a bird on it.
 # About
 When placed in your KA Lite's installation directory, open start.html for serverless browsing of your KA Lite's videos and exercises. 
 
+![Screenshot](https://raw.github.com/open-learning-exchange/Flying-Owl/master/screenshot.png)
+
 # Installation
 Place this directory in your KA Lite directory and then open the start.html file. Your done! Well, almost.  This includes a pruned version of the topics.json file because most browsers (Chrome, Android web browser) will choke (QuataExceeded: DOM Exception 22) if you put that into localStorage. You may want to roll your own topics.json file or help out with the efforts to make a file system based JSON store so the whole topics.json doesn't have to be loaded all at once (see GIST https://gist.github.com/rjsteinert/5080816). 
 
